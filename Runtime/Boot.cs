@@ -24,9 +24,5 @@ namespace Yogi.RaidSurvival.Runtime {
         private void LoadData() {
             _gameData.Load();
         }
-
-        private void Test() {
-            
-        }
     }
 }

@@ -9,5 +9,9 @@ namespace Yogi.RaidSurvival.Runtime.Utils {
         public static void Echo(string text) {
             Debug.Log(text);
         }
+
+        private static void Test() {
+            
+        }
     }
 }

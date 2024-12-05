@@ -3,7 +3,10 @@ using UnityEngine;
 using VContainer;
 using VContainer.Unity;
 using Yogi.RaidSurvival.Runtime.Data;
+using Yogi.RaidSurvival.Runtime.Game.Factories;
+using Yogi.RaidSurvival.Runtime.Game.Logic;
 using Yogi.RaidSurvival.Runtime.ScriptableObjects;
+using Yogi.RaidSurvival.Runtime.Utils;
 
 namespace Yogi.RaidSurvival.Runtime.DiScopes {
     public class GameLifetimeScope : LifetimeScope {
@@ -13,8 +16,15 @@ namespace Yogi.RaidSurvival.Runtime.DiScopes {
             RegisterMessagePipe(builder);
             RegisterGameSettings(builder);
             builder.RegisterEntryPoint<Boot>();
+            builder.Register<Logger>(Lifetime.Singleton);
             builder.Register<GameData>(Lifetime.Singleton);
             builder.Register<SceneLoader>(Lifetime.Singleton);
+
+            builder.RegisterFactory<Transform, PlayerLogic>(container => // container is an IObjectResolver
+            {
+                var log = container.Resolve<Log>(); // Resolve per scope
+                return rootTransform => new PlayerLogic(rootTransform, log); // Execute per factory invocation
+            }, Lifetime.Scoped);
         }
 
         private void RegisterMessagePipe(IContainerBuilder builder) {

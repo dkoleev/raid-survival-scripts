@@ -8,7 +8,10 @@ namespace Yogi.RaidSurvival.Runtime.ScriptableObjects {
         public enum SceneType {
             Core = 1,
             EnvBase = 2,
-            LevelBase = 3
+            LevelBase = 3,
+            Debug = 4,
+            Player = 5,
+            UI = 6
         }
         
         [SerializedDictionary("Type", "Addressable path")]

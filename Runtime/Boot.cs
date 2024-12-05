@@ -1,4 +1,5 @@
-﻿using JetBrains.Annotations;
+﻿using Cysharp.Threading.Tasks;
+using JetBrains.Annotations;
 using VContainer;
 using VContainer.Unity;
 using Yogi.RaidSurvival.Runtime.Data;
@@ -16,20 +17,26 @@ namespace Yogi.RaidSurvival.Runtime {
         }
 
         public void Start() {
-            StartGame();
+            StartGame().Forget();
         }
 
-        private void StartGame() {
+        private async UniTaskVoid StartGame() {
             LoadData();
-            LoadScenes();
+            await LoadScenes();
         }
 
         private void LoadData() {
             _gameData.Load();
         }
 
-        private void LoadScenes() {
-            _sceneLoader.LoadCommonScenes();
+        private async UniTask LoadScenes() {
+#if DEBUG
+            await _sceneLoader.LoadDebugScene();
+#endif
+            await _sceneLoader.LoadHomeLocationScene();
+            await _sceneLoader.LoadCommonScenes();
+            await _sceneLoader.LoadPlayerScene();
+            await _sceneLoader.LoadUiScene();
         }
     }
 }

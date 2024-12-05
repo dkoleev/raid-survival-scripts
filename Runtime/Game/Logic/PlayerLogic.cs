@@ -12,6 +12,10 @@ namespace Yogi.RaidSurvival.Runtime.Game.Logic {
             _rootTransform = rootTransform;
             _log = log;
         }
+
+        private void TestLogic() {
+            
+        }
         
         /*private void MoveToDefaultPosition() {
             var defaultPosition = GameObject.FindGameObjectWithTag("PlayerDefaultPosition");

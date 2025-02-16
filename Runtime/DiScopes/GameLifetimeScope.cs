@@ -18,7 +18,7 @@ namespace Yogi.RaidSurvival.Runtime.DiScopes {
             RegisterMessagePipe(builder);
             RegisterGameSettings(builder);
             builder.RegisterEntryPoint<Boot>();
-            builder.Register<Logger>(Lifetime.Singleton);
+            builder.Register<GameLogger>(Lifetime.Singleton);
             builder.Register<GameData>(Lifetime.Singleton);
             builder.Register<SceneLoader>(Lifetime.Singleton);
             builder.Register<SaveSystem>(Lifetime.Singleton);

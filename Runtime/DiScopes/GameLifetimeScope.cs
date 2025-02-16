@@ -6,6 +6,8 @@ using Yogi.RaidSurvival.Runtime.Data;
 using Yogi.RaidSurvival.Runtime.Game.Factories;
 using Yogi.RaidSurvival.Runtime.Game.Logic;
 using Yogi.RaidSurvival.Runtime.ScriptableObjects;
+using Yogi.RaidSurvival.Runtime.State;
+using Yogi.RaidSurvival.Runtime.Systems;
 using Yogi.RaidSurvival.Runtime.Utils;
 
 namespace Yogi.RaidSurvival.Runtime.DiScopes {
@@ -19,10 +21,12 @@ namespace Yogi.RaidSurvival.Runtime.DiScopes {
             builder.Register<Logger>(Lifetime.Singleton);
             builder.Register<GameData>(Lifetime.Singleton);
             builder.Register<SceneLoader>(Lifetime.Singleton);
+            builder.Register<SaveSystem>(Lifetime.Singleton);
+            builder.Register<GameState>(Lifetime.Singleton);
 
             builder.RegisterFactory<Transform, PlayerLogic>(container => // container is an IObjectResolver
             {
-                var log = container.Resolve<Log>(); // Resolve per scope
+                var log = container.Resolve<GameLogger>(); // Resolve per scope
                 return rootTransform => new PlayerLogic(rootTransform, log); // Execute per factory invocation
             }, Lifetime.Scoped);
         }

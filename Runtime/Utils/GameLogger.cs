@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Yogi.RaidSurvival.Runtime.Utils {
     [UsedImplicitly]
-    public class Log {
+    public class GameLogger {
         public void Message(string message) {
             Debug.Log(message);
         }

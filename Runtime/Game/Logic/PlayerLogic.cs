@@ -5,12 +5,12 @@ using Yogi.RaidSurvival.Runtime.Utils;
 namespace Yogi.RaidSurvival.Runtime.Game.Logic {
     public class PlayerLogic {
         private readonly Transform _rootTransform;
-        private readonly Log _log;
+        private readonly GameLogger _gameLogger;
 
         [Inject]
-        public PlayerLogic(Transform rootTransform, Log log) {
+        public PlayerLogic(Transform rootTransform, GameLogger gameLogger) {
             _rootTransform = rootTransform;
-            _log = log;
+            _gameLogger = gameLogger;
         }
 
         private void TestLogic() {

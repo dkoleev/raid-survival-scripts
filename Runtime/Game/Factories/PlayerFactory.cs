@@ -4,12 +4,12 @@ using Yogi.RaidSurvival.Runtime.Utils;
 
 namespace Yogi.RaidSurvival.Runtime.Game.Factories {
     public class PlayerFactory {
-        private readonly Log _log;
+        private readonly GameLogger _gameLogger;
 
-        public PlayerFactory(Log log) {
-            _log = log;
+        public PlayerFactory(GameLogger gameLogger) {
+            _gameLogger = gameLogger;
         }
 
-        public PlayerLogic Create(Transform playerTransform) => new PlayerLogic(playerTransform, _log);
+        public PlayerLogic Create(Transform playerTransform) => new PlayerLogic(playerTransform, _gameLogger);
     }
 }

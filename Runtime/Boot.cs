@@ -1,5 +1,6 @@
 ﻿using Cysharp.Threading.Tasks;
 using JetBrains.Annotations;
+using UnityEngine;
 using VContainer;
 using VContainer.Unity;
 using Yogi.RaidSurvival.Runtime.Data;
@@ -27,6 +28,11 @@ namespace Yogi.RaidSurvival.Runtime {
             await LoadProgress();
             LoadData();
             await LoadScenes();
+            var player = GameObject.FindWithTag("Player");
+            var spawnPoint = GameObject.FindWithTag("PlayerSpawnPoint");
+            player.gameObject.SetActive(false);
+            player.transform.position = spawnPoint.transform.position;
+            player.gameObject.SetActive(true);
         }
 
         private async UniTask LoadProgress() {
@@ -39,8 +45,8 @@ namespace Yogi.RaidSurvival.Runtime {
 
         private async UniTask LoadScenes() {
             await _sceneLoader.LoadCommonScenes();
-            await _sceneLoader.LoadHomeLocationScene();
             await _sceneLoader.LoadPlayerScene();
+            await _sceneLoader.LoadHomeLocationScene();
             await _sceneLoader.LoadUiScene();
             
 #if DEBUG

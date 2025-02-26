@@ -14,24 +14,28 @@ namespace Yogi.RaidSurvival.Runtime {
         }
         
         public async UniTask LoadCommonScenes() {
-            await Addressables.LoadSceneAsync(_sceneSettings.Scenes[SceneSettings.SceneType.Core], LoadSceneMode.Additive);
-            await Addressables.LoadSceneAsync(_sceneSettings.Scenes[SceneSettings.SceneType.EnvBase], LoadSceneMode.Additive);
+            await LoadScene(_sceneSettings.Scenes[SceneSettings.SceneType.Core], LoadSceneMode.Additive);
+            //await LoadScene(_sceneSettings.Scenes[SceneSettings.SceneType.EnvBase], LoadSceneMode.Additive);
         }
 
         public async UniTask LoadHomeLocationScene() {
-            await Addressables.LoadSceneAsync(_sceneSettings.Scenes[SceneSettings.SceneType.LevelBase], LoadSceneMode.Additive);
+            await LoadScene(_sceneSettings.Scenes[SceneSettings.SceneType.LevelBase], LoadSceneMode.Additive);
         }
         
         public async UniTask LoadDebugScene() {
-            await Addressables.LoadSceneAsync(_sceneSettings.Scenes[SceneSettings.SceneType.Debug], LoadSceneMode.Additive);
+            await LoadScene(_sceneSettings.Scenes[SceneSettings.SceneType.Debug], LoadSceneMode.Additive);
         }
         
         public async UniTask LoadPlayerScene() {
-            await Addressables.LoadSceneAsync(_sceneSettings.Scenes[SceneSettings.SceneType.Player], LoadSceneMode.Additive);
+            await LoadScene(_sceneSettings.Scenes[SceneSettings.SceneType.Player], LoadSceneMode.Additive);
         }
         
         public async UniTask LoadUiScene() {
-            await Addressables.LoadSceneAsync(_sceneSettings.Scenes[SceneSettings.SceneType.UI], LoadSceneMode.Additive);
+            await LoadScene(_sceneSettings.Scenes[SceneSettings.SceneType.UI], LoadSceneMode.Additive);
+        }
+
+        private async UniTask LoadScene(string path, LoadSceneMode mode) {
+            await Addressables.LoadSceneAsync($"{path}.unity", mode);
         }
     }
 }

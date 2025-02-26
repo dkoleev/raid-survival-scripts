@@ -9,7 +9,7 @@ namespace Yogi.RaidSurvival.Runtime.Game.Presenters {
         }
 
         private void Start() {
-            MoveToDefaultPosition();
+            //MoveToDefaultPosition();
         }
 
         private void MoveToDefaultPosition() {

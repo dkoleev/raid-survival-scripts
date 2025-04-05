@@ -1,10 +1,10 @@
 ﻿using Cysharp.Threading.Tasks;
 using JetBrains.Annotations;
+using RaidSurvival.Runtime.ScriptableObjects;
 using UnityEngine.AddressableAssets;
 using UnityEngine.SceneManagement;
-using Yogi.RaidSurvival.Runtime.ScriptableObjects;
 
-namespace Yogi.RaidSurvival.Runtime {
+namespace RaidSurvival.Runtime {
     [UsedImplicitly]
     public class SceneLoader {
         private readonly SceneSettings _sceneSettings;
@@ -12,7 +12,7 @@ namespace Yogi.RaidSurvival.Runtime {
         private SceneLoader(SceneSettings sceneSettings) {
             _sceneSettings = sceneSettings;
         }
-        
+
         public async UniTask LoadCommonScenes() {
             await LoadScene(_sceneSettings.Scenes[SceneSettings.SceneType.Core], LoadSceneMode.Additive);
             //await LoadScene(_sceneSettings.Scenes[SceneSettings.SceneType.EnvBase], LoadSceneMode.Additive);
@@ -36,6 +36,7 @@ namespace Yogi.RaidSurvival.Runtime {
 
         private async UniTask LoadScene(string path, LoadSceneMode mode) {
             await Addressables.LoadSceneAsync($"{path}.unity", mode);
+            
         }
     }
 }

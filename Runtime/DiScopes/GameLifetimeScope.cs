@@ -1,16 +1,15 @@
 ﻿using MessagePipe;
+using RaidSurvival.Runtime.Data;
+using RaidSurvival.Runtime.Game.Logic;
+using RaidSurvival.Runtime.ScriptableObjects;
+using RaidSurvival.Runtime.State;
+using RaidSurvival.Runtime.Systems;
+using RaidSurvival.Runtime.Utils;
 using UnityEngine;
 using VContainer;
 using VContainer.Unity;
-using Yogi.RaidSurvival.Runtime.Data;
-using Yogi.RaidSurvival.Runtime.Game.Factories;
-using Yogi.RaidSurvival.Runtime.Game.Logic;
-using Yogi.RaidSurvival.Runtime.ScriptableObjects;
-using Yogi.RaidSurvival.Runtime.State;
-using Yogi.RaidSurvival.Runtime.Systems;
-using Yogi.RaidSurvival.Runtime.Utils;
 
-namespace Yogi.RaidSurvival.Runtime.DiScopes {
+namespace RaidSurvival.Runtime.DiScopes {
     public class GameLifetimeScope : LifetimeScope {
         [SerializeField] private GameSettings gameSettings;
         

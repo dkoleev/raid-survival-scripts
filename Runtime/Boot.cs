@@ -1,12 +1,12 @@
 ﻿using Cysharp.Threading.Tasks;
 using JetBrains.Annotations;
+using RaidSurvival.Runtime.Data;
+using RaidSurvival.Runtime.Systems;
 using UnityEngine;
 using VContainer;
 using VContainer.Unity;
-using Yogi.RaidSurvival.Runtime.Data;
-using Yogi.RaidSurvival.Runtime.Systems;
 
-namespace Yogi.RaidSurvival.Runtime {
+namespace RaidSurvival.Runtime {
     [UsedImplicitly]
     public class Boot : IStartable {
         private readonly GameData _gameData;

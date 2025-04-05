@@ -1,7 +1,7 @@
 ﻿using JetBrains.Annotations;
 using UnityEngine;
 
-namespace Yogi.RaidSurvival.Runtime.Utils {
+namespace RaidSurvival.Runtime.Utils {
     [UsedImplicitly]
     public class GameLogger {
         public void Message(string message) {

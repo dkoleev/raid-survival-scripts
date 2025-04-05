@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 
 using UnityEngine;
 
-namespace Yogi.RaidSurvival.Runtime {
+namespace RaidSurvival.Runtime {
     public class SimpleCameraController : MonoBehaviour {
         class CameraState {
             public float yaw;

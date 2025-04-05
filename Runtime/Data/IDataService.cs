@@ -1,4 +1,4 @@
-﻿namespace Yogi.RaidSurvival.Runtime.Data {
+﻿namespace RaidSurvival.Runtime.Data {
     public interface IDataService {
         GameData GetData();
     }

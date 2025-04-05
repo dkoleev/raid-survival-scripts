@@ -1,7 +1,7 @@
-﻿using VContainer;
-using Yogi.RaidSurvival.Runtime.Utils;
+﻿using RaidSurvival.Runtime.Utils;
+using VContainer;
 
-namespace Yogi.RaidSurvival.Runtime.Game.Logic {
+namespace RaidSurvival.Runtime.Game.Logic {
     public class BuildingLogic {
         private readonly GameLogger _gameLogger;
 

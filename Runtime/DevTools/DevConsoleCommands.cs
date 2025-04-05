@@ -2,7 +2,7 @@ using JetBrains.Annotations;
 using UnityEngine;
 using Yogi.UnityDevConsole.Scripts.Runtime;
 
-namespace Yogi.RaidSurvival.Runtime.Utils {
+namespace RaidSurvival.Runtime.DevTools {
     [UsedImplicitly]
     public static class DevConsoleCommands {
         [DevConsoleCommand("echo")]
@@ -10,8 +10,6 @@ namespace Yogi.RaidSurvival.Runtime.Utils {
             Debug.Log(text);
         }
 
-        private static void Test() {
-            
-        }
-    }
+        private static void Test() { }
+    }   
 }

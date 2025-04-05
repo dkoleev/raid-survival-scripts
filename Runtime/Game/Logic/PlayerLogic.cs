@@ -1,8 +1,8 @@
-﻿using UnityEngine;
+﻿using RaidSurvival.Runtime.Utils;
+using UnityEngine;
 using VContainer;
-using Yogi.RaidSurvival.Runtime.Utils;
 
-namespace Yogi.RaidSurvival.Runtime.Game.Logic {
+namespace RaidSurvival.Runtime.Game.Logic {
     public class PlayerLogic {
         private readonly Transform _rootTransform;
         private readonly GameLogger _gameLogger;

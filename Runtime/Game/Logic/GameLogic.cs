@@ -1,9 +1,10 @@
 ﻿using System;
 using Cysharp.Threading.Tasks;
+using JetBrains.Annotations;
+using RaidSurvival.Runtime.Systems;
 using VContainer;
-using Yogi.RaidSurvival.Runtime.Systems;
 
-namespace Yogi.RaidSurvival.Runtime.Game.Logic {
+namespace RaidSurvival.Runtime.Game.Logic {
     public class GameLogic {
         private readonly SaveSystem _saveSystem;
 
@@ -12,10 +13,11 @@ namespace Yogi.RaidSurvival.Runtime.Game.Logic {
             _saveSystem = saveSystem;
         }
 
+        [UsedImplicitly]
         void OnApplicationQuit() {
             _saveSystem.Save();
         }
-        
+
         private async UniTaskVoid AutoSaveLoop() {
             while (true) {
                 await UniTask.Delay(TimeSpan.FromMinutes(2));

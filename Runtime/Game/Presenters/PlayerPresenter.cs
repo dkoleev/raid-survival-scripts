@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Yogi.RaidSurvival.Runtime.Game.Presenters {
+namespace RaidSurvival.Runtime.Game.Presenters {
     public class PlayerPresenter : MonoBehaviour {
         private Transform _root;
 

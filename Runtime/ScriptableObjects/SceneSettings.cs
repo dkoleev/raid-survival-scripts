@@ -2,7 +2,7 @@
 using AYellowpaper.SerializedCollections;
 using UnityEngine;
 
-namespace Yogi.RaidSurvival.Runtime.ScriptableObjects {
+namespace RaidSurvival.Runtime.ScriptableObjects {
     [Serializable]
     public class SceneSettings {
         public enum SceneType {

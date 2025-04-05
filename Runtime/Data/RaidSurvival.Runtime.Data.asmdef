@@ -1,6 +1,6 @@
 {
-    "name": "Yogi.RaidSurvival.Runtime.Data",
-    "rootNamespace": "Yogi.RaidSurvival",
+    "name": "RaidSurvival.Runtime.Data",
+    "rootNamespace": "RaidSurvival",
     "references": [
         "GUID:2413d904697578642a67d94570d87a3a",
         "GUID:f51ebe6a0ceec4240a699833d6309b23",

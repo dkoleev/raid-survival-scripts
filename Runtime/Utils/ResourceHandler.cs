@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.SceneManagement;
 
-namespace Yogi.RaidSurvival.Runtime.Utils {
+namespace RaidSurvival.Runtime.Utils {
     public static class ResourceHandler {
         public static T InstantiateObject<T>(string addressablePath, Transform parent = null, bool worldPositionStays = false) where T : Component {
             var op = Addressables.InstantiateAsync(addressablePath, parent, worldPositionStays);

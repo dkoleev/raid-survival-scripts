@@ -1,10 +1,10 @@
 using System.Collections.Generic;
 using System.Reflection;
 using Newtonsoft.Json;
+using RaidSurvival.Runtime.Utils;
 using UnityEngine;
-using Yogi.RaidSurvival.Runtime.Utils;
 
-namespace Yogi.RaidSurvival.Runtime.Data {
+namespace RaidSurvival.Runtime.Data {
     internal class DataLoader {
         private static readonly string ConfigsDirectory = "Data";
         

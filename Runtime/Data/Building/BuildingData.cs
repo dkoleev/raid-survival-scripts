@@ -1,4 +1,4 @@
-﻿namespace Yogi.RaidSurvival.Runtime.Data.Building {
+﻿namespace RaidSurvival.Runtime.Data.Building {
     public class BuildingData {
         
     }

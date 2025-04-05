@@ -1,8 +1,8 @@
-﻿using UnityEngine;
-using Yogi.RaidSurvival.Runtime.Game.Logic;
-using Yogi.RaidSurvival.Runtime.Utils;
+﻿using RaidSurvival.Runtime.Game.Logic;
+using RaidSurvival.Runtime.Utils;
+using UnityEngine;
 
-namespace Yogi.RaidSurvival.Runtime.Game.Factories {
+namespace RaidSurvival.Runtime.Game.Factories {
     public class PlayerFactory {
         private readonly GameLogger _gameLogger;
 

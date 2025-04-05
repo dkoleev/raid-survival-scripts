@@ -1,6 +1,6 @@
-﻿using Yogi.RaidSurvival.Runtime.Data.Core;
+﻿using RaidSurvival.Runtime.Data.Core;
 
-namespace Yogi.RaidSurvival.Runtime.Data {
+namespace RaidSurvival.Runtime.Data {
     public class GameData {
         public CoreData Core { get; private set; } = new();
 

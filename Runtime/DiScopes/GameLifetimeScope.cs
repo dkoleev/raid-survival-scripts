@@ -1,5 +1,6 @@
 ﻿using MessagePipe;
 using RaidSurvival.Runtime.Data;
+using RaidSurvival.Runtime.Game;
 using RaidSurvival.Runtime.Game.Logic;
 using RaidSurvival.Runtime.ScriptableObjects;
 using RaidSurvival.Runtime.State;
@@ -16,6 +17,9 @@ namespace RaidSurvival.Runtime.DiScopes {
         protected override void Configure(IContainerBuilder builder) {
             RegisterMessagePipe(builder);
             RegisterGameSettings(builder);
+
+            builder.Register<AppConfig>(Lifetime.Singleton).AsImplementedInterfaces();
+            
             builder.RegisterEntryPoint<Boot>();
             builder.Register<GameLogger>(Lifetime.Singleton);
             builder.Register<GameData>(Lifetime.Singleton);

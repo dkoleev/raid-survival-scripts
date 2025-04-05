@@ -14,7 +14,7 @@ namespace RaidSurvival.Runtime.DevTools {
             _timeLeft = UpdateInterval;
 
             _textStyle = new GUIStyle {
-                fontSize = 42,
+                fontSize = 24,
                 fontStyle = FontStyle.Bold,
                 alignment = TextAnchor.MiddleLeft,
                 normal = { textColor = Color.white }
@@ -43,7 +43,7 @@ namespace RaidSurvival.Runtime.DevTools {
                 _      => Color.red
             };
 
-            GUI.Label(new Rect(5, 5, 200, 50), $"{_fps:F2} FPS", _textStyle);
+            GUI.Label(new Rect(5, 5, 150, 50), $"{_fps:F2} FPS", _textStyle);
         }
     }
 }
